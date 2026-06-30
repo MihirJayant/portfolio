@@ -53,7 +53,6 @@
   .cv-menu a{padding:9px 12px;border-radius:7px;font-size:0.9rem;color:var(--muted)}
   .cv-menu a:hover{background:var(--accent-soft);color:var(--text)}
   .menu-btn{display:none;background:none;border:1px solid var(--line-2);border-radius:8px;color:var(--text);width:42px;height:38px;cursor:pointer;font-size:1.1rem}
-
   /* HERO: reduced min-height and padding so it takes up less vertical space */
   .hero{position:relative;min-height:auto;display:flex;align-items:center;padding:104px 0 36px;overflow:hidden}
   .hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.65;-webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 94%);mask-image:linear-gradient(180deg,#000 30%,transparent 94%)}
@@ -78,7 +77,6 @@
   .ticker a:first-child{border-left:none}
   .ticker .n{font-family:"Bricolage Grotesque",sans-serif;font-size:1.45rem;font-weight:700;letter-spacing:-0.02em}
   .ticker .l{color:var(--faint);margin-top:3px}
-
   /* SECTIONS: tighter vertical rhythm throughout */
   section{padding:56px 0}
   #about{padding-top:56px;padding-bottom:30px}
@@ -88,7 +86,6 @@
   #experience{padding-top:30px;padding-bottom:56px}
   #skills{padding-top:30px;padding-bottom:56px}
   #aitools{padding-top:30px;padding-bottom:56px}
-
   .eyebrow{display:flex;align-items:center;gap:14px;color:var(--accent);margin-bottom:16px}
   .eyebrow::before{content:"";width:30px;height:1px;background:var(--accent)}
   .sec-title{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(1.6rem,3.6vw,2.3rem);letter-spacing:-0.03em;line-height:1.07;margin-bottom:14px}
@@ -241,7 +238,7 @@
     <a href="#top" class="brand"><span class="dot"></span>Mihir Jayant</a>
     <div class="nav-links">
       <a href="#about">About</a>
-<a href="#work">Work</a>
+<a href="#work">Projects</a>
 <a href="#certs">Certifications</a>
 <a href="#qualifications">Qualifications</a>
 <div class="cv-dd">
@@ -280,7 +277,7 @@
       <a href="#contact" class="btn btn-ghost">Get in touch</a>
     </div>
     <div class="ticker">
-      <a href="#work"><div class="n">7</div><div class="l mono">Projects shipped</div></a>
+      <a href="#work"><div class="n">8</div><div class="l mono">Projects shipped</div></a>
       <a href="#about"><div class="n">First</div><div class="l mono">Class Hons · Computer Science (AI)</div></a>
       <a href="#certs"><div class="n">5</div><div class="l mono">Certifications</div></a>
       <a href="#experience"><div class="n">2yr</div><div class="l mono">At Apple</div></a>
@@ -400,6 +397,18 @@
           <div class="desc-cols">
           <p class="desc">Raw data on its own does not make decisions; it has to be cleaned, explored, and modelled before it tells you anything useful. This project takes real datasets through the full data-science lifecycle to turn them into predictions and clear insight, following CRISP-DM, the industry-standard process used in professional analytics. The emphasis is on finding which approach actually works, not just running one model.</p>
           <p class="desc">I framed each problem, cleaned and explored the data, then compared five approaches (K-Nearest Neighbours, decision trees, logistic regression, clustering, and ensembles), judging them honestly through confusion matrices, ROC curves, cross-validation, and feature importance rather than a single score. Working through that comparison taught me why model evaluation matters as much as model building, and visualising the results for a non-technical reader pushed me to keep the focus on the decision rather than the maths. It gave me a repeatable, disciplined way to approach any analytics problem.</p>
+          </div>
+        </div>
+      </article>
+      <article class="card reveal" style="--c:#A3E635">
+        <div class="card-head"><span class="badge">Civic · Social Impact</span><span class="metric">5-PERSON AGILE TEAM</span></div>
+        <div class="viz"><canvas id="vizStreetAid" aria-hidden="true"></canvas></div>
+        <div class="card-foot">
+          <h3>Nottingham Street Aid <a class="git" href="https://nottinghamstreetaid.net" target="_blank" rel="noopener">Live ↗</a></h3>
+          <div class="stack">JavaScript · HTML/CSS · Authentication · Agile</div>
+          <div class="desc-cols">
+          <p class="desc">Nottingham Street Aid is a charitable grant platform supporting organisations that help individuals move away from homelessness. I built it as part of a five-person Agile team, and unlike most of the projects on this page it did not stay in a repository: it is live, in active use, processing real grant applications for real organisations. That changed how we approached the work, since the cost of a bug was no longer a lost mark but a charity unable to do its job.</p>
+          <p class="desc">My contribution spanned both ends of the stack. On the frontend I worked on user registration and the application flow, including terms-and-conditions validation gating what a user could submit. On the backend I helped build the authentication system, including a separate super-user login for grant administrators, and the access-control logic that determines who can view or approve which applications, so that sensitive grant decisions stay restricted to the right people. Working inside a five-person team on a system other people would actually depend on taught me as much about communication, code review, and shared ownership as it did about the code itself.</p>
           </div>
         </div>
       </article>
@@ -706,6 +715,21 @@
         var bw=40,bx=nodeX-bw/2,by=nodeY[k]+7,frac=Math.min(1,load[k]/6);ctx.fillStyle='rgba(255,255,255,0.09)';rr(ctx,bx,by,bw,3,1.5);ctx.fill();if(frac>0.02){ctx.fillStyle=hexA(col,0.9);rr(ctx,bx,by,bw*frac,3,1.5);ctx.fill();}
         ctx.fillStyle=down?'#FB7185':'#34D399';ctx.beginPath();ctx.arc(nodeX-26+6,nodeY[k]-15+5,2.2,0,6.283);ctx.fill();}
       for(var i=packets.length-1;i>=0;i--){var p=packets[i],age=(t-p.t0)/0.8;if(age>=1){packets.splice(i,1);continue;}var x=lbX+(nodeX-lbX)*age,y=my+(nodeY[p.target]-my)*age;ctx.fillStyle=color;ctx.shadowColor=color;ctx.shadowBlur=8;ctx.beginPath();ctx.arc(x,y,3,0,6.283);ctx.fill();ctx.shadowBlur=0;}};}
+  // Nottingham Street Aid: application gate + approval flow
+  function initStreetAid(c,color){var ctx=c.ctx,apps=[],acc=0;
+    return function(t){var W=c.W,H=c.H;ctx.clearRect(0,0,W,H);var x0=W*0.14,xg=W*0.5,x1=W*0.86,my=H*0.5;
+      if(t-acc>1.05){acc=t;var approved=Math.random()<0.72;apps.push({t0:t,approved:approved,lane:(Math.random()-0.5)*H*0.32});}
+      ctx.strokeStyle=hexA(color,0.18);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x0,my);ctx.lineTo(xg,my);ctx.moveTo(xg,my);ctx.lineTo(x1,my-H*0.18);ctx.moveTo(xg,my);ctx.lineTo(x1,my+H*0.18);ctx.stroke();
+      ctx.fillStyle=hexA(color,0.14);ctx.strokeStyle=hexA(color,0.7);ctx.lineWidth=1.5;rr(ctx,x0-30,my-18,60,36,8);ctx.fill();ctx.stroke();ctx.fillStyle='rgba(233,237,246,0.92)';ctx.font='600 9px "IBM Plex Mono",monospace';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('applicant',x0,my);
+      var pulse=0.5+0.5*Math.sin(t*2.2);ctx.strokeStyle=hexA(color,0.9);ctx.lineWidth=2;ctx.shadowColor=color;ctx.shadowBlur=10+pulse*4;rr(ctx,xg-26,my-26,52,52,10);ctx.stroke();ctx.shadowBlur=0;
+      ctx.fillStyle=color;ctx.font='700 8px "IBM Plex Mono",monospace';ctx.fillText('AUTH',xg,my-6);ctx.fillText('GATE',xg,my+6);
+      ctx.fillStyle=hexA('#34D399',0.85);ctx.font='600 9px "IBM Plex Mono",monospace';ctx.textAlign='left';ctx.fillText('approved',x1+4,my-H*0.18);
+      ctx.fillStyle=hexA('#FB7185',0.7);ctx.fillText('declined',x1+4,my+H*0.18);
+      for(var i=apps.length-1;i>=0;i--){var a=apps[i],age=(t-a.t0)/1.3;if(age>=1){apps.splice(i,1);continue;}
+        var ty=a.approved?my-H*0.18:my+H*0.18,e=easeOut(Math.min(age,1)),x,y;
+        if(age<0.46){var f=age/0.46;x=x0+(xg-x0)*f;y=my+a.lane*0.3*Math.sin(f*3.14);}else{var f2=(age-0.46)/0.54;x=xg+(x1-xg)*f2;y=my+(ty-my)*f2;}
+        var col=a.approved?'#34D399':'#FB7185';ctx.fillStyle=hexA(col,0.9);ctx.shadowColor=col;ctx.shadowBlur=8;ctx.beginPath();ctx.arc(x,y,3,0,6.283);ctx.fill();ctx.shadowBlur=0;}
+      ctx.fillStyle=hexA(color,0.55);ctx.font='500 8px "IBM Plex Mono",monospace';ctx.textAlign='center';ctx.fillText('REGISTRATION · ROLE-GATED ACCESS · GRANT REVIEW',W*0.5,H*0.92);};}
   // Working with LLMs: tool constellation
   function initLLM(c){var ctx=c.ctx;
     var tools=[{n:'Claude',c:'#D77757'},{n:'ChatGPT',c:'#74E0BD'},{n:'Gemini',c:'#A78BFA'},{n:'Perplexity',c:'#22D3EE'},{n:'Copilot',c:'#34D399'},{n:'Siri AI',c:'#FBBF24'}];
@@ -725,6 +749,7 @@
   addScene('vizData',function(c){return initMapReduce(c,'#FB923C');});
   addScene('vizRobot',function(c){return initRobot(c,'#60A5FA');});
   addScene('vizDs',function(c){return initRoc(c);});
+  addScene('vizStreetAid',function(c){return initStreetAid(c,'#A3E635');});
   addScene('vizLLM',function(c){return initLLM(c);});
   if(reduce){if(starScene){try{starScene.render(1);}catch(e){}}for(var s2=0;s2<scenes.length;s2++){try{scenes[s2].render(2.8);}catch(e){}}}
   else{function loop(now){var t=(now-t0)/1000;if(starScene){try{starScene.render(t);}catch(e){}}for(var i=0;i<scenes.length;i++){if(scenes[i].visible){try{scenes[i].render(t);}catch(e){}}}requestAnimationFrame(loop);}var t0=performance.now();requestAnimationFrame(loop);}
